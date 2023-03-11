@@ -11,5 +11,23 @@ Este projeto é voltado para profissionais que trabalham com bancos de dados, pr
 
 Para mais informações, consulte a documentação do projeto e as instruções de instalação e configuração. Esteja à vontade para contribuir com novas funcionalidades, relatar problemas e enviar sugestões de melhorias.
 
+REQUISITOS:
+
+- Ter conhecimento em bancos de dados, programação e análise de dados.
+
+- Ter um ambiente de desenvolvimento instalado.
+
+- Ter o software de gerenciamento de banco de dados SQL SERVER instalado e configurado.
+
+- Ter conhecimento em linguagem SQL para criação e manipulação do banco de dados.
+
+- Ter a ferramenta de ETl da Microsoft Integrations Services instalado e configurada com o SQl SERVER.
+
+- Conhecimento em ETL para extrair, transformar e carregar os dados no ambiente OLAP ou no data warehousing.
+
+- Disponibilidade de espaço de armazenamento em disco suficiente para armazenar as informações do banco de dados.
+
+- Um sistema operacional compatível com o software utilizado.
+
 
 
