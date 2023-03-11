@@ -5,7 +5,7 @@ Este repositório contém o código-fonte do Banco de Dados OLTP criado para ate
 
 O ambiente OLTP permite que a empresa gerencie seus dados operacionais em tempo real, possibilitando a inserção, atualização e exclusão de dados. Além disso, foi criado um ambiente de stage para extrair e modificar os dados do ambiente OLTP e carregá-los no ambiente OLAP ou no data warehousing.
 
-O data warehousing é uma área de armazenamento de dados que permite análises de dados em larga escala, sem afetar o desempenho do ambiente OLTP. O DW foi criado para que possamos fazer pesquisas de forma mais eficaz e tomar decisões mais informadas com base nos dados.
+O DataWharehouse é uma área de armazenamento de dados que permite análises de dados em larga escala, sem afetar o desempenho do ambiente OLTP. O DW foi criado para que possamos fazer pesquisas de forma mais eficaz e tomar decisões mais informadas com base nos dados.
 
 Este projeto é voltado para profissionais que trabalham com bancos de dados, programação e análise de dados. O código-fonte está disponível neste repositório para que possa ser utilizado, modificado e aprimorado de acordo com as necessidades de cada projeto.
 
