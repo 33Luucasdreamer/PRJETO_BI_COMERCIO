@@ -1,7 +1,7 @@
 Banco de Dados para Comércio de Eletrônicos
 
 
-Este repositório contém o código-fonte do Banco de Dados OLTP criado para atender a uma empresa no ramo de comércio de eletrônicos. O objetivo do banco é armazenar informações importantes sobre clientes, funcionários, produtos e fornecedores, além de registrar e armazenar todas as vendas efetuadas pela empresa, com a tabela de notas fiscais.
+Este repositório contém o código-fonte do Banco de Dados OLTP criado para atender a uma empresa fictícia no ramo de comércio de eletrônicos. O objetivo do banco é armazenar informações importantes sobre clientes, funcionários, produtos e fornecedores, além de registrar e armazenar todas as vendas efetuadas pela empresa, com a tabela de notas fiscais.
 
 O ambiente OLTP permite que a empresa gerencie seus dados operacionais em tempo real, possibilitando a inserção, atualização e exclusão de dados. Além disso, foi criado um ambiente de stage para extrair e modificar os dados do ambiente OLTP e carregá-los no ambiente OLAP ou no data warehousing.
 
@@ -23,7 +23,7 @@ REQUISITOS:
 
 - Ter a ferramenta de ETl da Microsoft Integrations Services instalado e configurada com o SQl SERVER.
 
-- Conhecimento em ETL para extrair, transformar e carregar os dados no ambiente OLAP ou no data warehousing.
+- Conhecimento em ETL para extrair, transformar e carregar os dados no ambiente OLAP ou no DataWharehouse.
 
 - Disponibilidade de espaço de armazenamento em disco suficiente para armazenar as informações do banco de dados.
 
