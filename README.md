@@ -21,7 +21,7 @@ REQUISITOS:
 
 - Ter conhecimento em linguagem SQL para criação e manipulação do banco de dados.
 
-- Ter a ferramenta de ETl da Microsoft Integrations Services instalado e configurada com o SQl SERVER.
+- Ter a ferramenta de ETL da Microsoft Integrations Services instalado e configurada com o SQl SERVER.
 
 - Conhecimento em ETL para extrair, transformar e carregar os dados no ambiente OLAP ou no DataWharehouse.
 
