@@ -23,7 +23,7 @@ REQUISITOS:
 
 - Ter a ferramenta de ETl da Microsoft Integrations Services instalado e configurada com o SQl SERVER.
 
-- Conhecimento em ETL para extrair, transformar e carregar os dados no ambiente OLAP ou no data warehousing.
+- Conhecimento em ETL para extrair, transformar e carregar os dados no ambiente OLAP ou no DataWharehouse.
 
 - Disponibilidade de espaço de armazenamento em disco suficiente para armazenar as informações do banco de dados.
 
