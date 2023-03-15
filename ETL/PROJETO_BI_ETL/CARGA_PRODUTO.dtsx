@@ -1,0 +1,661 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/14/2023 6:05:39 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LUCAS"
+  DTS:CreatorName="LUCAS\lucas"
+  DTS:DTSID="{D6E80A37-5E1C-4714-B8BF-9E31E7311929}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="CARGA_PRODUTO"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{C046054F-A785-42A0-B62E-E263BD8B493A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LUCAS.COMERCIO_OLTP_1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E0623A51-5690-42C4-B9A9-08429D401BE4}"
+      DTS:ObjectName="LUCAS.COMERCIO_OLTP_1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=LUCAS;Initial Catalog=COMERCIO_OLTP_1;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LUCAS.COMERCIO_OLTP_STAGE_1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{96DB765A-4C52-4D8D-99D8-2A27DE145BC5}"
+      DTS:ObjectName="LUCAS.COMERCIO_OLTP_STAGE_1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=LUCAS;Initial Catalog=COMERCIO_OLTP_STAGE_1;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Contêiner da Sequência"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{8FE396BD-75D2-4A7E-8730-A0C7558DFC15}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Contêiner da Sequência">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{D37C8118-2110-42BF-87F7-DF0040DFBAFF}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarefa Fluxo de Dados"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="Destino OLE DB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT IDPRODUTO, PRODUTO, CUSTO_MEDIO, VALOR_UNITARIO, ID_CATEGORIA
+FROM     ST_PRODUTO</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LUCAS.COMERCIO_OLTP_STAGE_1]"
+                      connectionManagerRefId="Package.ConnectionManagers[LUCAS.COMERCIO_OLTP_STAGE_1]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[IDPRODUTO]"
+                          cachedDataType="i4"
+                          cachedName="IDPRODUTO"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDPRODUTO]"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDPRODUTO]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[PRODUTO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="PRODUTO"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO]"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[PRODUTO]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[CUSTO_MEDIO]"
+                          cachedDataType="numeric"
+                          cachedName="CUSTO_MEDIO"
+                          cachedPrecision="10"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CUSTO_MEDIO]"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[CUSTO_MEDIO]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[ID_CATEGORIA]"
+                          cachedDataType="i4"
+                          cachedName="ID_CATEGORIA"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CATEGORIA]"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_CATEGORIA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[VALOR]"
+                          cachedDataType="numeric"
+                          cachedName="VALOR"
+                          cachedPrecision="10"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[VALOR_UNITARIO]"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[VALOR]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDPRODUTO]"
+                          dataType="i4"
+                          name="IDPRODUTO" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="PRODUTO" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CUSTO_MEDIO]"
+                          dataType="numeric"
+                          name="CUSTO_MEDIO"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[VALOR_UNITARIO]"
+                          dataType="numeric"
+                          name="VALOR_UNITARIO"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CATEGORIA]"
+                          dataType="i4"
+                          name="ID_CATEGORIA" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="Origem OLE DB"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT IDPRODUTO, PRODUTO, VALOR, CUSTO_MEDIO, ID_CATEGORIA
+FROM     PRODUTO</property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LUCAS.COMERCIO_OLTP_1]"
+                      connectionManagerRefId="Package.ConnectionManagers[LUCAS.COMERCIO_OLTP_1]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB]"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDPRODUTO]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[IDPRODUTO]"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDPRODUTO]"
+                          name="IDPRODUTO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[PRODUTO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO]"
+                          length="100"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[PRODUTO]"
+                          name="PRODUTO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[VALOR]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[VALOR]"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[VALOR]"
+                          name="VALOR"
+                          precision="10"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[CUSTO_MEDIO]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[CUSTO_MEDIO]"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[CUSTO_MEDIO]"
+                          name="CUSTO_MEDIO"
+                          precision="10"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_CATEGORIA]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_CATEGORIA]"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_CATEGORIA]"
+                          name="ID_CATEGORIA"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[IDPRODUTO]"
+                          dataType="i4"
+                          name="IDPRODUTO" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="PRODUTO" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[VALOR]"
+                          dataType="numeric"
+                          name="VALOR"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[CUSTO_MEDIO]"
+                          dataType="numeric"
+                          name="CUSTO_MEDIO"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_CATEGORIA]"
+                          dataType="i4"
+                          name="ID_CATEGORIA" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[IDPRODUTO]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[IDPRODUTO]"
+                          name="IDPRODUTO" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO]"
+                          name="PRODUTO" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[VALOR]"
+                          dataType="numeric"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[VALOR]"
+                          name="VALOR"
+                          precision="10"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[CUSTO_MEDIO]"
+                          dataType="numeric"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[CUSTO_MEDIO]"
+                          name="CUSTO_MEDIO"
+                          precision="10"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_CATEGORIA]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_CATEGORIA]"
+                          name="ID_CATEGORIA" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados.Paths[Saída de Origem OLE DB]"
+                  endId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contêiner da Sequência\TRUNCATE_PRODUTO"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{28CECEFA-8DE3-4440-A5F0-55989024CB5E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE_PRODUTO"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{96DB765A-4C52-4D8D-99D8-2A27DE145BC5}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE ST_PRODUTO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contêiner da Sequência.PrecedenceConstraints[Restrição]"
+          DTS:CreationName=""
+          DTS:DTSID="{CD84A088-BF0E-4A4C-8816-F92D70EA28F1}"
+          DTS:From="Package\Contêiner da Sequência\TRUNCATE_PRODUTO"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição"
+          DTS:To="Package\Contêiner da Sequência\Tarefa Fluxo de Dados" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECUTOR DE CAMELCASE"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{F41DB2AE-0F81-40C8-9A31-323510DF181D}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECUTOR DE CAMELCASE">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\EXECUTOR DE CAMELCASE\Tarefa Executar SQL"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{1A65D5C8-4387-4FC0-BA52-999E3E812461}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarefa Executar SQL"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{96DB765A-4C52-4D8D-99D8-2A27DE145BC5}"
+              SQLTask:SqlStatementSource="EXEC CAMEL_CASE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{CBC9A103-D383-459A-96BD-BD5EC199DF55}"
+      DTS:From="Package\Contêiner da Sequência"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\EXECUTOR DE CAMELCASE" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="184.8,56.8"
+          Id="Package\Contêiner da Sequência\Tarefa Fluxo de Dados"
+          TopLeft="31.4285714869604,64.0941210703866" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência.PrecedenceConstraints[Restrição]"
+          TopLeft="28,25.5529437675608">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="3.42857148696035,66.9411773028258"
+              Start="0,0"
+              End="-4.07142851303965,66.9411773028258">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,62.9411773028258" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,62.9411773028258"
+                    Point2="-22.5,66.9411773028258"
+                    Point3="-18.5,66.9411773028258" />
+                  <mssgle:LineSegment
+                    End="-4.07142851303965,66.9411773028258" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\Contêiner da Sequência\TRUNCATE_PRODUTO"
+          TopLeft="28,4.75294376756082" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="228,176"
+          Size="228,219.2"
+          Id="Package\Contêiner da Sequência"
+          TopLeft="4.44285184899107,48.1999934364769" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\EXECUTOR DE CAMELCASE\Tarefa Executar SQL"
+          TopLeft="18.285720182925,18.8235310333411" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="258.4,163.2"
+          Size="258.4,206.4"
+          Id="Package\EXECUTOR DE CAMELCASE"
+          TopLeft="328.000005585807,53.2235301582046" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="232.442851848991,157.111761797341">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="95.5571537368158,0"
+              Start="0,0"
+              End="88.0571537368158,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="88.0571537368158,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Contêiner da Sequência\Tarefa Fluxo de Dados">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB"
+          TopLeft="327.428577004647,73.4117657354547" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB"
+          TopLeft="101.02857141884,71.4352941433864" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\Tarefa Fluxo de Dados.Paths[Saída de Origem OLE DB]"
+          TopLeft="253.02857141884,93.2235299394205">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74.4000055858069,0"
+              Start="0,0"
+              End="66.9000055858069,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.9000055858069,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Destino OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contêiner da Sequência\Tarefa Fluxo de Dados\Origem OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
