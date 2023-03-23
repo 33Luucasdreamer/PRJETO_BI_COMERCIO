@@ -2,48 +2,48 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>PROJETO_BI_ETL</Name>
-    <LastWriteTime>2023-03-15T02:56:49.5569256Z</LastWriteTime>
+    <LastWriteTime>2023-03-22T15:33:10.425554Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>CARGA_CLIENTE.dtsx</Name>
-      <LastWriteTime>2023-03-14T20:56:23.6884995Z</LastWriteTime>
+      <LastWriteTime>2023-03-22T15:18:37.6509727Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CARGA_PRODUTO.dtsx</Name>
-      <LastWriteTime>2023-03-14T22:07:25.7843311Z</LastWriteTime>
+      <LastWriteTime>2023-03-22T15:05:59.5931164Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CARGA_CATEGORIA.dtsx</Name>
-      <LastWriteTime>2023-03-14T22:44:18.4861952Z</LastWriteTime>
+      <LastWriteTime>2023-03-22T01:35:39.7739277Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CARGA_VENDEDOR.dtsx</Name>
-      <LastWriteTime>2023-03-14T23:51:05.7043295Z</LastWriteTime>
+      <LastWriteTime>2023-03-22T21:43:33.978717Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CARGA_FORMA_PAGAMENTO.dtsx</Name>
-      <LastWriteTime>2023-03-15T01:03:23.5275289Z</LastWriteTime>
+      <LastWriteTime>2023-03-22T21:39:00.1163176Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CARGA_FORNECEDOR.dtsx</Name>
-      <LastWriteTime>2023-03-15T01:03:20.2981064Z</LastWriteTime>
+      <LastWriteTime>2023-03-22T14:21:21.154477Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CARGA_NOTA.dtsx</Name>
-      <LastWriteTime>2023-03-15T02:52:19.4642755Z</LastWriteTime>
+      <LastWriteTime>2023-03-22T21:53:20.9198116Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CARGA_FATO.dtsx</Name>
-      <LastWriteTime>2023-03-15T02:56:49.4510667Z</LastWriteTime>
+      <LastWriteTime>2023-03-23T01:03:00.0006678Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
