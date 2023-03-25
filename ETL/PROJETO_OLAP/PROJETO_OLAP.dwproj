@@ -6,6 +6,18 @@
     <Name>PROJETO_OLAP.database</Name>
     <FullPath>PROJETO_OLAP.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>CUBO_VENDAS.cube</Name>
+      <FullPath>CUBO_VENDAS.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>CUBO_VENDAS.partitions</Name>
+          <FullPath>CUBO_VENDAS.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
   <Dimensions>
     <ProjectItem>
       <Name>DIM CLIENTE.dim</Name>

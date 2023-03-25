@@ -34,6 +34,21 @@
         <ID>DIM TEMPO</ID>
       </Dimension>
     </Dimensions>
+    <Cubes>
+      <Cube>
+        <ID>CUBO_VENDAS</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>FATO</ID>
+            <Partitions>
+              <Partition>
+                <ID>FATO</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+    </Cubes>
     <DataSourceImpersonationInfo>
       <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
       <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>

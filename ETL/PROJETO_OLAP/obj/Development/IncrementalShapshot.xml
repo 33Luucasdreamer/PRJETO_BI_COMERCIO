@@ -75,9 +75,16 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>/sOZtKVj5LYQGuwTY2gbCcoPDUs=23/03/2023 12:27:3923/03/2023 12:25:40</TimeStamp>
+        <TimeStamp>/sOZtKVj5LYQGuwTY2gbCcoPDUs=23/03/2023 13:58:2223/03/2023 12:25:40</TimeStamp>
         <ID>
           <String>DIM TEMPO</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>Z8NV+U88CMRsnB5T5CdQDo62/a8=23/03/2023 14:10:3323/03/2023 14:10:32L2xh0YrxyoQ3x54jAfFTjS+HciA=23/03/2023 14:10:3323/03/2023 14:10:32</TimeStamp>
+        <ID>
+          <String>CUBO_VENDAS</String>
         </ID>
       </ObjectSnapshot>
     </ObjectSnapshots>
@@ -92,5 +99,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2023-03-23T15:27:41.563333Z</LastDeployed>
+  <LastDeployed>2023-03-23T17:16:54.053333Z</LastDeployed>
 </DeploymentSnapshot>

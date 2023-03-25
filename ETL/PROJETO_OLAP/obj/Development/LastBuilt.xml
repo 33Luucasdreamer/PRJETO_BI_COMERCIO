@@ -24,29 +24,29 @@
       <b>228</b>
     </Hash>
   </Item>
-  <Item name="PROJETO_OLAP.database">
-    <Time>638151217361832992</Time>
+  <Item name="DIM VENDEDOR.dim">
+    <Time>638151687350148759</Time>
     <Hash length="20">
-      <b>99</b>
-      <b>99</b>
-      <b>186</b>
-      <b>174</b>
-      <b>214</b>
-      <b>173</b>
-      <b>191</b>
-      <b>105</b>
-      <b>216</b>
-      <b>135</b>
-      <b>198</b>
-      <b>177</b>
-      <b>230</b>
-      <b>240</b>
-      <b>243</b>
-      <b>45</b>
-      <b>150</b>
-      <b>214</b>
-      <b>3</b>
-      <b>42</b>
+      <b>54</b>
+      <b>162</b>
+      <b>250</b>
+      <b>68</b>
+      <b>79</b>
+      <b>217</b>
+      <b>196</b>
+      <b>62</b>
+      <b>169</b>
+      <b>80</b>
+      <b>14</b>
+      <b>62</b>
+      <b>137</b>
+      <b>29</b>
+      <b>41</b>
+      <b>156</b>
+      <b>218</b>
+      <b>82</b>
+      <b>248</b>
+      <b>203</b>
     </Hash>
   </Item>
   <Item name="DIM NOTA.dim">
@@ -74,6 +74,31 @@
       <b>50</b>
     </Hash>
   </Item>
+  <Item name="PROJETO_OLAP.database">
+    <Time>638151217361832992</Time>
+    <Hash length="20">
+      <b>99</b>
+      <b>99</b>
+      <b>186</b>
+      <b>174</b>
+      <b>214</b>
+      <b>173</b>
+      <b>191</b>
+      <b>105</b>
+      <b>216</b>
+      <b>135</b>
+      <b>198</b>
+      <b>177</b>
+      <b>230</b>
+      <b>240</b>
+      <b>243</b>
+      <b>45</b>
+      <b>150</b>
+      <b>214</b>
+      <b>3</b>
+      <b>42</b>
+    </Hash>
+  </Item>
   <Item name="DIM CLIENTE.dim">
     <Time>638151628491875571</Time>
     <Hash length="20">
@@ -97,6 +122,31 @@
       <b>165</b>
       <b>197</b>
       <b>198</b>
+    </Hash>
+  </Item>
+  <Item name="CUBO_VENDAS.cube">
+    <Time>638151774330981126</Time>
+    <Hash length="20">
+      <b>103</b>
+      <b>195</b>
+      <b>85</b>
+      <b>249</b>
+      <b>79</b>
+      <b>60</b>
+      <b>8</b>
+      <b>196</b>
+      <b>108</b>
+      <b>156</b>
+      <b>30</b>
+      <b>83</b>
+      <b>228</b>
+      <b>39</b>
+      <b>80</b>
+      <b>14</b>
+      <b>142</b>
+      <b>182</b>
+      <b>253</b>
+      <b>175</b>
     </Hash>
   </Item>
   <Item name="DIM PRODUTO.dim">
@@ -175,7 +225,7 @@
     </Hash>
   </Item>
   <Item name="DIM TEMPO.dim">
-    <Time>638151712596464168</Time>
+    <Time>638151767026756435</Time>
     <Hash length="20">
       <b>254</b>
       <b>195</b>
@@ -199,29 +249,29 @@
       <b>75</b>
     </Hash>
   </Item>
-  <Item name="DIM VENDEDOR.dim">
-    <Time>638151687350148759</Time>
+  <Item name="CUBO_VENDAS.partitions">
+    <Time>638151774331129330</Time>
     <Hash length="20">
-      <b>54</b>
-      <b>162</b>
-      <b>250</b>
-      <b>68</b>
-      <b>79</b>
-      <b>217</b>
-      <b>196</b>
-      <b>62</b>
-      <b>169</b>
-      <b>80</b>
-      <b>14</b>
-      <b>62</b>
-      <b>137</b>
-      <b>29</b>
-      <b>41</b>
-      <b>156</b>
-      <b>218</b>
-      <b>82</b>
-      <b>248</b>
-      <b>203</b>
+      <b>47</b>
+      <b>108</b>
+      <b>97</b>
+      <b>209</b>
+      <b>138</b>
+      <b>241</b>
+      <b>202</b>
+      <b>132</b>
+      <b>55</b>
+      <b>199</b>
+      <b>158</b>
+      <b>35</b>
+      <b>1</b>
+      <b>241</b>
+      <b>83</b>
+      <b>141</b>
+      <b>47</b>
+      <b>135</b>
+      <b>114</b>
+      <b>32</b>
     </Hash>
   </Item>
   <Item name="DIM FORMA.dim">
